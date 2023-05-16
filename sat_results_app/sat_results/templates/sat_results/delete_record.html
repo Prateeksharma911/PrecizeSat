@@ -1,0 +1,14 @@
+{% extends 'sat_results/base.html' %}
+
+{% block content %}
+    <h2>Delete Record</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br>
+        <input type="submit" value="Delete Record">
+    </form>
+    {% if message %}
+        <p class="message">{{ message }}</p>
+    {% endif %}
+{% endblock %}

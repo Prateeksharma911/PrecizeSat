@@ -1,0 +1,25 @@
+{% extends 'sat_results/base.html' %}
+
+{% block content %}
+    <h2>View All Data</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Pincode</th>
+            <th>SAT Score</th>
+            <th>Passed</th>
+        </tr>
+        {% for candidate in candidates %}
+        <tr>
+            <td>{{ candidate.name }}</td>
+            <td>{{ candidate.city }}</td>
+            <td>{{ candidate.country }}</td>
+            <td>{{ candidate.pincode }}</td>
+            <td>{{ candidate.sat_score }}</td>
+            <td>{{ candidate.passed }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
