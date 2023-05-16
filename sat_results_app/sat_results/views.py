@@ -37,11 +37,11 @@ def get_rank(request):
         return render(request, 'sat_results/get_rank.html', {'name': name, 'rank': rank})
     
     return render(request, 'sat_results/get_rank.html')
-    
+
 def update_score(request):
     if request.method == 'POST':
         name = request.POST['name']
-        new_score = float(request.POST['sat_score'])  # Updated field name
+        new_score = float(request.POST['new_score'])
         
         try:
             candidate = Candidate.objects.get(name=name)
@@ -53,6 +53,7 @@ def update_score(request):
         return redirect('view_all_data')
     
     return render(request, 'sat_results/update_score.html')
+
 def delete_record(request):
     if request.method == 'POST':
         name = request.POST['name']
